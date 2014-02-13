@@ -26,11 +26,11 @@ for dirpath, dirnames, filenames in os.walk('unsubscribe'):
 
 
 setup(name='Django Unsubscribe',
-      version='0.01',
+      version='0.1.0',
       description='Django Unsubscribe make it menial to attach the proper '\
                 'unsubscribe methods to newsletter-type e-mails.',
-      author='Michael Newman',
-      author_email='newmaniese@gmail.com',
+      author='Saurabh Kumar',
+      author_email='thes.kumar@gmail.com',
       packages=packages,
       package_data={'newmanutils': data_files},
 )
