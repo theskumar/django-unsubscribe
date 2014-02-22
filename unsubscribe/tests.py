@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.test import TestCase
 from .mail import UnsubscribableEmailMessage
 from .utils import get_token_for_user

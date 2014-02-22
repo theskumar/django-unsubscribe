@@ -1,27 +1,47 @@
+===============================
 Django Unsubscribe
-==================
+===============================
 
-Django Unsubscribe make it menial to attach the proper unsubscribe methods to 
-newsletter-type e-mails.
+.. image:: https://badge.fury.io/py/django-unsubsribe.png
+    :target: http://badge.fury.io/py/django-unsubscribe
+    
+.. image:: https://travis-ci.org/django-unsubscribe.png?branch=master
+        :target: https://travis-ci.org/django-unsubscribe
 
-## Quickstart
+.. image:: https://pypip.in/d/django-unsubscribe/badge.png
+        :target: https://crate.io/packages/django-unsubscribe?version=latest
 
-Install Django Unsubcribe:
 
-    pip install django-unsubcribe
+Easily send one-click un-subscribable emails from django to keep your customers happy.
 
-Then use it in a project:
+* Free software: BSD license
 
-    from unsubscribe import UnsubscribableEmailMessage
-    # rest of your code
-
-## Features
+Features
+--------
 
 * Adds `List-Unsubscribe` header to the email.
 * Adds a context variable `unsubscribe_url` which can be used to render emails.
 * Provides signals to implement the actual unsubscribe logic.
 
-## Overview
+Quickstart
+----------
+
+Install Django Unsubcribe:
+
+    pip install django-unsubscribe
+
+Add `unsubscribe` to your `INSTALLED_APPS` settings.
+
+    from unsubscribe import UnsubscribableEmailMessage  
+    # rest of your code
+
+Add a signal listner for `user_unsubscribe` in your code that contains the logic to unsubsribe a user from the mailing list.
+
+That's it!
+
+
+Overview
+--------
 
 This application is supposed to help at improving the overall quality of the 
 mass e-mails your site sends out by:
@@ -36,10 +56,11 @@ This application does not:
 
 2. Actually unsubscribe members from your mailing lists. It provides a signal, `unsubscribe.signals.user_unsubscribe`, which you must hook on to to unsubscribe your users.
 
-## Contributing
-
+Contributing
+------------
 Please send pull request or open a issue.
 
-## License
+License
+-------
 
-MIT
+BSD

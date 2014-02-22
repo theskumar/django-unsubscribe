@@ -1,36 +1,53 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
-from distutils.core import setup
 import os
+import sys
 
-# Compile the list of packages available, because distutils doesn't have
-# an easy way to do this.
-packages, data_files = [], []
-root_dir = os.path.dirname(__file__)
-if root_dir:
-    os.chdir(root_dir)
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
 
-for dirpath, dirnames, filenames in os.walk('unsubscribe'):
-    # Ignore dirnames that start with '.'
-    for i, dirname in enumerate(dirnames):
-        if dirname.startswith('.'): del dirnames[i]
-    if '__init__.py' in filenames:
-        pkg = dirpath.replace(os.path.sep, '.')
-        if os.path.altsep:
-            pkg = pkg.replace(os.path.altsep, '.')
-        packages.append(pkg)
-    elif filenames:
-        prefix = dirpath[12:] # Strip "newmanutils" or "newmanutils"
-        for f in filenames:
-            data_files.append(os.path.join(prefix, f))
+if sys.argv[-1] == 'publish':
+    os.system('python setup.py sdist upload')
+    sys.exit()
 
+readme = open('README.rst').read()
+history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
-setup(name='Django Unsubscribe',
-      version='0.1.0',
-      description='Django Unsubscribe make it menial to attach the proper '\
-                'unsubscribe methods to newsletter-type e-mails.',
-      author='Saurabh Kumar',
-      author_email='thes.kumar@gmail.com',
-      packages=packages,
-      package_data={'newmanutils': data_files},
+setup(
+    name='django-unsubscribe',
+    version='0.1.0',
+    description='Easily send one-click un-subscribable newletter type emails from \
+                django to keep your customers happy.',
+    long_description=readme + '\n\n' + history,
+    author='Saurabh Kumar',
+    author_email='thes.kumar@gmail.com',
+    url='https://github.com/theskumar/django-unsubscribe',
+    packages=[
+        'unsubscribe',
+    ],
+    package_dir={'unsubscribe': 'unsubscribe'},
+    include_package_data=True,
+    install_requires=[
+        'Django >= 1.4.3',
+    ],
+    zip_safe=False,
+    classifiers=[
+            'Development Status :: 2 - Pre-Alpha',
+            'Intended Audience :: Developers',
+            'License :: OSI Approved :: BSD License',
+            'Programming Language :: Python :: 2.6',
+            'Programming Language :: Python :: 2.7',
+            'Environment :: Web Environment',
+            'Framework :: Django',
+            'Intended Audience :: Developers',
+            'License :: OSI Approved :: BSD License',
+            'Operating System :: OS Independent',
+            'Programming Language :: Python',
+            'Programming Language :: Python :: 2',
+            'Programming Language :: Python :: 3',
+            'Topic :: Utilities'
+        ],
 )
