@@ -2,13 +2,13 @@
 Django Unsubscribe
 ===============================
 
-.. image:: https://badge.fury.io/py/django-unsubsribe.png
+.. image:: https://badge.fury.io/py/django-unsubsribe.svg
     :target: http://badge.fury.io/py/django-unsubscribe
 
-.. image:: https://travis-ci.org/theskumar/django-unsubscribe.png?branch=master
+.. image:: https://travis-ci.org/theskumar/django-unsubscribe.svg?branch=master
         :target: https://travis-ci.org/theskumar/django-unsubscribe
 
-.. image:: https://pypip.in/d/django-unsubscribe/badge.png
+.. image:: https://pypip.in/d/django-unsubscribe/badge.svg
         :target: https://crate.io/packages/django-unsubscribe?version=latest
 
 
@@ -22,10 +22,15 @@ Features
 * Adds a context variable `unsubscribe_url` which can be used to render emails.
 * Provides signals to implement the actual unsubscribe logic.
 
+Requirements
+------------
+* Python (2.7, 3.2, 3.3, 3.4)
+* Django (1.4, 1.5, 1.6, 1.7)
+
 Quickstart
 ----------
 
-Install Django Unsubcribe:
+Install Django Unsubscribe:
 
     pip install django-unsubscribe
 
@@ -45,9 +50,9 @@ Overview
 This application is supposed to help at improving the overall quality of the
 mass e-mails your site sends out by:
 
-1. Creating a simple subclass of `django.core.mail.EmailMultiAlternatives`, which adds a List-Unsubscribe header to the email message and a `render_message` function that is a wrapper to `render_to_string` to add `unsubscribe_url` to the context.
+1. Creating a simple subclass of `django.core.mail.EmailMultiAlternatives`, which adds a `List-Unsubscribe` header to the email message and a `render_message` function that is a wrapper to `render_to_string` to add `unsubscribe_url` to the context.
 
-2. Providing a replaceable urlconf and view, which provides a unique url for each user wishing to unsubscribe.
+2. Providing a replaceable `urlconf` and `view`, which provides a unique url for each user wishing to unsubscribe.
 
 This application does not:
 

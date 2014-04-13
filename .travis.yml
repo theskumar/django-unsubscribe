@@ -4,8 +4,10 @@ python:
   - "2.7"
   - "3.2"
   - "3.3"
+  - "3.4"
 
 env:
+  - DJANGO="https://www.djangoproject.com/download/1.7b1/tarball/"
   - DJANGO="django==1.6.2"
   - DJANGO="django==1.5.5"
   - DJANGO="django==1.4.10"

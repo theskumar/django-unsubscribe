@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.core.urlresolvers import reverse
 from django.contrib.sites.models import Site
 
-from unsubscribe.utils import get_token_for_user
+from .utils import get_token_for_user
 
 
 class UnsubscribableEmailMessage(EmailMultiAlternatives):
@@ -17,10 +18,13 @@ class UnsubscribableEmailMessage(EmailMultiAlternatives):
                                 bcc=None, connection=None, attachments=None,
                                 headers=None, alternatives=None):
         unsub_headers = headers or {}
-        unsub_url = reverse('unsubscribe_unsubscribe', args=[user.pk, get_token_for_user(user)])
+        unsub_url = reverse('unsubscribe_unsubscribe',
+            args=[user.pk, get_token_for_user(user)])
 
         # TODO fix scheme not to be hard coded.
-        unsub_headers['List-Unsubscribe'] = '<http://%s%s>' % (Site.objects.get_current().domain, unsub_url)
+        protocol = 'http'
+        site_url = '%s://%s' % (protocol, Site.objects.get_current().domain)
+        unsub_headers['List-Unsubscribe'] = '<%s%s>' % (site_url, unsub_url)
         super(UnsubscribableEmailMessage, self).__init__(subject=subject,
                             body=body, from_email=from_email, to=to, bcc=bcc,
                             connection=connection, attachments=attachments,
