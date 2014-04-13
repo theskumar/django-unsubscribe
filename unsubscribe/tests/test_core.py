@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 from django.test import TestCase
-from .mail import UnsubscribableEmailMessage
-from .utils import get_token_for_user
 
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
+
+from unsubscribe.mail import UnsubscribableEmailMessage
+from unsubscribe.utils import get_token_for_user
+
 
 class UnsubscribeTest(TestCase):
     def setUp(self):
@@ -31,7 +33,7 @@ class UnsubscribeTest(TestCase):
 
         from django.test.client import Client
         c = Client()
-        response = c.get(reverse('unsubscribe_unsubscribe',
+        c.get(reverse('unsubscribe_unsubscribe',
                             args=(self.user.pk, get_token_for_user(self.user))))
 
         self.assertTrue(closure_test[0])

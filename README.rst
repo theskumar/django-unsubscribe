@@ -4,7 +4,7 @@ Django Unsubscribe
 
 .. image:: https://badge.fury.io/py/django-unsubsribe.png
     :target: http://badge.fury.io/py/django-unsubscribe
-    
+
 .. image:: https://travis-ci.org/django-unsubscribe.png?branch=master
         :target: https://travis-ci.org/django-unsubscribe
 
@@ -14,7 +14,6 @@ Django Unsubscribe
 
 Easily send one-click un-subscribable emails from django to keep your customers happy.
 
-* Free software: BSD license
 
 Features
 --------
@@ -32,18 +31,18 @@ Install Django Unsubcribe:
 
 Add `unsubscribe` to your `INSTALLED_APPS` settings.
 
-    from unsubscribe import UnsubscribableEmailMessage  
+    from unsubscribe import UnsubscribableEmailMessage
+
     # rest of your code
 
 Add a signal listner for `user_unsubscribe` in your code that contains the logic to unsubsribe a user from the mailing list.
 
 That's it!
 
-
 Overview
 --------
 
-This application is supposed to help at improving the overall quality of the 
+This application is supposed to help at improving the overall quality of the
 mass e-mails your site sends out by:
 
 1. Creating a simple subclass of `django.core.mail.EmailMultiAlternatives`, which adds a List-Unsubscribe header to the email message and a `render_message` function that is a wrapper to `render_to_string` to add `unsubscribe_url` to the context.
@@ -64,3 +63,4 @@ License
 -------
 
 BSD
+
