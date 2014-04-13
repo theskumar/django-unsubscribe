@@ -16,7 +16,7 @@ def unsubscribe(request, user_id, token,\
     """
     user = get_object_or_404(User, pk=user_id)
     if not token == get_token_for_user(user):
-        raise Http404, "Token did not match"
+        raise Http404
 
     context = RequestContext(request)
 

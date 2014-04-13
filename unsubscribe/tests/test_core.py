@@ -34,7 +34,7 @@ class UnsubscribeTest(TestCase):
 
         from django.test.client import Client
         c = Client()
-        c.get(reverse('unsubscribe_unsubscribe',
-                            args=(self.user.pk, get_token_for_user(self.user))))
-
+        url = reverse('unsubscribe_unsubscribe',
+                            args=(self.user.pk, get_token_for_user(self.user)))
+        c.get(url)
         self.assertTrue(closure_test[0])
