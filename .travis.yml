@@ -4,7 +4,7 @@ python:
   - "2.7"
   - "3.2"
   - "3.3"
-  - "3.4"
+  # - "3.4" Holding untill https://github.com/travis-ci/travis-ci/issues/1989
 
 env:
   - DJANGO="https://www.djangoproject.com/download/1.7b1/tarball/"

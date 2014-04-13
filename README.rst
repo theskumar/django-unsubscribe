@@ -2,14 +2,11 @@
 Django Unsubscribe
 ===============================
 
-.. image:: https://badge.fury.io/py/django-unsubsribe.svg
+.. image:: https://badge.fury.io/py/django-unsubsribe.png
     :target: http://badge.fury.io/py/django-unsubscribe
 
 .. image:: https://travis-ci.org/theskumar/django-unsubscribe.svg?branch=master
         :target: https://travis-ci.org/theskumar/django-unsubscribe
-
-.. image:: https://pypip.in/d/django-unsubscribe/badge.svg
-        :target: https://crate.io/packages/django-unsubscribe?version=latest
 
 
 Easily send one-click un-subscribable emails from django to keep your customers happy.
