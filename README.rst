@@ -2,7 +2,7 @@
 Django Unsubscribe
 ===============================
 
-.. image:: https://badge.fury.io/py/django-unsubscribe.svg
+.. image:: https://badge.fury.io/py/django-unsubscribe.svg?fix
     :target: http://badge.fury.io/py/django-unsubscribe
 
 .. image:: https://travis-ci.org/theskumar/django-unsubscribe.svg?branch=master
