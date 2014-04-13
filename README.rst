@@ -5,8 +5,8 @@ Django Unsubscribe
 .. image:: https://badge.fury.io/py/django-unsubsribe.png
     :target: http://badge.fury.io/py/django-unsubscribe
 
-.. image:: https://travis-ci.org/django-unsubscribe.png?branch=master
-        :target: https://travis-ci.org/django-unsubscribe
+.. image:: https://travis-ci.org/theskumar/django-unsubscribe.png?branch=master
+        :target: https://travis-ci.org/theskumar/django-unsubscribe
 
 .. image:: https://pypip.in/d/django-unsubscribe/badge.png
         :target: https://crate.io/packages/django-unsubscribe?version=latest

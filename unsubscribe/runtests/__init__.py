@@ -18,7 +18,7 @@ def main():
 
     test_runner = TestRunner()
 
-    test_module_name = 'rest_framework_jwt.tests'
+    test_module_name = 'unsubscribe.tests'
 
     if django.VERSION[0] == 1 and django.VERSION[1] < 6:
         test_module_name = 'tests'
