@@ -12,6 +12,7 @@ import django
 from django.conf import settings
 from django.test.utils import get_runner
 
+
 def usage():
     return """
     Usage: python runtests.py [UnitTestClass].[method]

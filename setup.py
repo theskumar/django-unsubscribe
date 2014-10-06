@@ -27,6 +27,7 @@ def get_packages(package):
             for dirpath, dirnames, filenames in os.walk(package)
             if os.path.exists(os.path.join(dirpath, '__init__.py'))]
 
+
 def get_package_data(package):
     """
     Return all files under the root package, that are not in a
@@ -64,31 +65,31 @@ setup(
     author_email='me+github@saurabh-kumar.com',
     packages=get_packages('unsubscribe'),
     package_data=get_package_data('unsubscribe'),
-    keywords = ['email', 'django', 'unsubscribe'],
+    keywords=['email', 'django', 'unsubscribe'],
     test_suite='unsubscribe.runtests.runtests.main',
     install_requires=[],
     zip_safe=False,
     classifiers=[
         # As from https://pypi.python.org/pypi?%3Aaction=list_classifiers
-        #'Development Status :: 1 - Planning',
-        #'Development Status :: 2 - Pre-Alpha',
-        #'Development Status :: 3 - Alpha',
+        # 'Development Status :: 1 - Planning',
+        # 'Development Status :: 2 - Pre-Alpha',
+        # 'Development Status :: 3 - Alpha',
         'Development Status :: 4 - Beta',
-        #'Development Status :: 5 - Production/Stable',
-        #'Development Status :: 6 - Mature',
-        #'Development Status :: 7 - Inactive',
+        # 'Development Status :: 5 - Production/Stable',
+        # 'Development Status :: 6 - Mature',
+        # 'Development Status :: 7 - Inactive',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
-        #'Programming Language :: Python :: 2.3',
-        #'Programming Language :: Python :: 2.4',
-        #'Programming Language :: Python :: 2.5',
+        # 'Programming Language :: Python :: 2.3',
+        # 'Programming Language :: Python :: 2.4',
+        # 'Programming Language :: Python :: 2.5',
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        #'Programming Language :: Python :: 3.0',
-        #'Programming Language :: Python :: 3.1',
-        #'Programming Language :: Python :: 3.2',
-        #'Programming Language :: Python :: 3.3',
+        # 'Programming Language :: Python :: 3.0',
+        # 'Programming Language :: Python :: 3.1',
+        # 'Programming Language :: Python :: 3.2',
+        # 'Programming Language :: Python :: 3.3',
         'Intended Audience :: Developers',
         # 'Intended Audience :: System Administrators',
         'License :: OSI Approved :: BSD License',
