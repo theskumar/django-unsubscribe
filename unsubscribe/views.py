@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import get_object_or_404, render_to_response
-from django.contrib.auth.models import User
 from django.http import Http404
 from django.template import RequestContext
 
+from .compat import get_user_model
 from .utils import get_token_for_user
 from .signals import user_unsubscribed
 
@@ -14,6 +14,7 @@ def unsubscribe(request, user_id, token,\
     returns unsubscribe/unsubscribe.html with extra_context, which could include
     callables and `unsubscribe_user`, which is the user that is unsibscribing.
     """
+    User = get_user_model()
     user = get_object_or_404(User, pk=user_id)
     if not token == get_token_for_user(user):
         raise Http404
