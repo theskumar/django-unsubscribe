@@ -1,0 +1,8 @@
+Code Contributors
+=================
+
+Saurabh Kumar (@_theskumar / gh: theskumar)*
+Marsel Zaripov (gh: TvoroG)
+
+
+* Possesses commit rights
