@@ -32,3 +32,4 @@ deploy:
     secure: HGOzjWP5mSqEEbnmNmSfiapGECPJwXfkuXZtdB7Ix9CW59IYuWw6LV7Rkm6SrmxfXxQV/HiAveUEIAqGV4ei5+txgoZC+ZgkpW+WVAl1W3m5MP7Gq6PTkP/YeIyUceKcgzUT62ifMAY6GkUriGQ8BtklKRoBNdIZwSM05AtpBzE=
   on:
     tags: true
+    all_branches: true # https://github.com/travis-ci/travis-ci/issues/1675
