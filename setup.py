@@ -95,7 +95,7 @@ setup(
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
         # 'Topic :: System :: Systems Administration',
-        'Topic :: Utilities'
+        'Topic :: Utilities',
         'Environment :: Web Environment',
         'Framework :: Django',
     ]
